@@ -20,7 +20,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
     setTimeout(this.step.bind(this), this.timeBetweenSteps);
-  
+                      
 
 
   };
@@ -34,4 +34,9 @@ var makeDancer = function(top, left, timeBetweenSteps) {
       left: left
     };
     this.$node.css(styleSettings);
+  };
+
+  makeDancer.prototype.lineUp = function(){
+  
+    this.$node.css({left: 100});
   };
