@@ -28,7 +28,6 @@ var pandaDancer = function(top, left, timeBetweenSteps) {
    
     // this.$node.animate({ "top": "-=50px" }, "slow" );
     // this.$node.animate({ "top": "+=50px" }, "slow" );
-
   
   };
 

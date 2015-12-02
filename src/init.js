@@ -29,25 +29,19 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
-    console.log(window.dancers);
+
   });
 
-  $(".lineUpButton").on("click", function(event) {
-    for(var i = 0; i < window.dancers.length; i++){
-      console.log(window.dancers[i]);
-      window.dancers[i].lineUp();
-    }
-  });
-  // $(".interactButton").on("click", function(event) {
+
     setInterval(function(){
     for(var i = 0; i < window.dancers.length; i++){
       for(var j = 0; j < window.dancers.length; j++){
         var positions1 = window.dancers[i].$node.position();
         var positions2 = window.dancers[j].$node.position();
-        console.log(positions1);
-        console.log(positions2);
+
         var pos1 = Math.sqrt(Math.pow(positions1.top - positions2.top,2) + Math.pow(positions1.left - positions2.left,2)); 
-        console.log(pos1);
+        console.log('in the loop');
+
 
         if(pos1 > 0 && pos1 < 200){
           window.dancers[i].$node.animate({'top' : $("body").height() * Math.random(),'left' : $("body").width() * Math.random()},'slow');
@@ -56,7 +50,15 @@ $(document).ready(function() {
       }
     }
   },1000);
-  // });
+
+
+  $(".lineUpButton").on("click", function(event) {
+    window.dancers[0].line = true;
+    for(var i = 0; i < window.dancers.length; i++){
+      
+      window.dancers[i].lineUp();
+    }
+  });
 
 
 });
