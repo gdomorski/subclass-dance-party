@@ -1,9 +1,11 @@
 body, html{
   height:100%;
+
 }
 body{
   margin: 0px;
-  background-image: url("bg.png") ;
+  background: url("images/bg.png") no-repeat center center fixed ;
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,15 +23,51 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid yellow;
-  border-radius:10px;
   position:absolute;
 }
 
-.bigDancer{
-  border:20px solid purple;
-  border-radius:10px;
-  position:absolute;
+.cat{
+  width: 125px;
+  height: auto;
 }
 
+.panda{
+  width: 150px;
+  height: auto;
+}
+.fox{
+  width: 150px;
+  height: auto;
+}
 
+.fox:hover {
+  transform: rotateY(180deg); 
+}
+
+#elephant {
+  width: 300px;
+  height: auto;
+  animation: orbit .5s linear infinite;
+}
+
+@keyframes orbit {
+  from {transform: rotate(0deg) translateX(30px) rotate(0deg);}
+  to {transform: rotate(360deg) translateX(30px) rotate(-360deg);}
+
+}
+
+#panda {
+  /*animation: orbit2 2s linear infinite;*/
+  animation: orbit3 2s linear infinite;
+}
+
+@keyframes orbit2 {
+  from {transform: rotate(0deg) translateX(100px) rotate(0deg);}
+  to {transform: rotate(180deg) translateX(100px) rotate(180deg);}
+
+}
+@keyframes orbit3 {
+  from {transform: rotate(360deg) translateX(100px) rotate(360deg);}
+  to {transform: rotate(0deg) translateX(100px) rotate(0deg);}
+
+}
